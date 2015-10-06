@@ -8,4 +8,6 @@ module ApplicationHelper
     else
       page_title + '|' + base_title
     end
+  end
+  
 end
