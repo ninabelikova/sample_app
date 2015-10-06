@@ -1,5 +1,20 @@
 <% provide(:title, "Home") %>
-<h1>Sample App</h1>
-<p>
-Home sweet home.
-</p>
+<div class="center jumbotron">
+  <h1>Welcome to the Magnificent Hababa version 2</h1>
+
+  <h2>
+    Have you always felt like something is missing from your life?<br>
+    Are you still secretly hoping for God to descend and apologize for the various bugs in your game?<br></h2>
+    <p>
+    (bugs like "money problems", "relationship issues" that our laziest developer of all time absolutely refuses to fix)<br>
+    (seriously, you just came down for some relaxing time of playing Human Being, what's with all the bugs and why can't you even adjust your IQ levels? )
+    <br></p><br>
+    <h2>
+    Hababa holds the key to all the answers.
+  </h2>
+
+  <%= link_to "Become a Hababa missionary now!", signup_path, class: "btn btn-lg btn-primary" %>
+</div>
+
+<%= link_to image_tag("hababa.png", alt: "Hababa logo"),
+            'http://rubyonrails.org/' %>
