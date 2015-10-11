@@ -1,5 +1,8 @@
 module SessionsHelper
 
+  ### Logging in and logging out ###
+
+
   def log_in(user)
     session[:user_id] = user.id
   end
@@ -9,6 +12,8 @@ module SessionsHelper
     session.delete(:user_id)
     @current_user = nil
   end
+
+  ### Checking login status, checking current user stuff ###
 
   def current_user
     if (user_id = session[:user_id])
@@ -22,9 +27,15 @@ module SessionsHelper
     end
   end
 
+  def current_user?(user)
+    user == current_user
+  end
+
   def logged_in?
     !current_user.nil?
   end
+
+  ### For the remember me feature ###
 
   def remember(user)
     user.remember
@@ -36,6 +47,17 @@ module SessionsHelper
     user.forget
     cookies.delete(:user_id)
     cookies.delete(:remember_token)
+  end
+
+  ### For the friendly forwarding feature ###
+
+  def redirect_back_or(default)
+    redirect_to(session[:forwarding_url] || default)
+    session.delete(:forwarding_url)
+  end
+
+  def store_location
+    session[:forwarding_url] = request.url if request.get?
   end
 
 end
