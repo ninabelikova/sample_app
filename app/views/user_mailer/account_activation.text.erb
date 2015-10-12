@@ -1,0 +1,5 @@
+Guten Tag <%= @user.name %>!
+
+Welcome to the Magnificent Hababa! Click very gently (if you click too hard it will not work) on the link below to activate your Hababaship.
+
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>

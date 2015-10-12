@@ -1,0 +1,9 @@
+<h1>The Magnificent Hababa</h1>
+
+<p>Guten Tag <%= @user.name %>! </p>
+
+<p>
+Welcome to the Magnificent Hababa! Click very gently (if you click too hard it will not work) on the link below to activate your Hababaship.
+</p>
+
+<%= link_to "Tap me gently", edit_account_activation_url(@user.activation_token, email: @user.email) %>
