@@ -1,0 +1,15 @@
+one:
+  follower: frenchfries
+  followed: lana
+
+two:
+  follower: frenchfries
+  followed: mallory
+
+three:
+  follower: lana
+  followed: frenchfries
+
+four:
+  follower: witch
+  followed: frenchfries
